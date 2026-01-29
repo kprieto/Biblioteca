@@ -35,13 +35,26 @@ public class Libro {
     private Boolean disponible = true;
 
 
-    @OneToOne(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Aquilar alquilerActivo;
+    @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
+    @JsonIgnoreProperties("libro")
+    private List<Aquilar> alquileres = new ArrayList<>();
 
 
     @JsonProperty("fechaFin")
     public LocalDate getFechaFin() {
-        return (alquilerActivo != null) ? alquilerActivo.getFechaFin() : null;
+        if (alquileres != null && !alquileres.isEmpty()) {
+            // Obtenemos el último alquiler registrado (el más reciente)
+            return alquileres.get(alquileres.size() - 1).getFechaFin();
+        }
+        return null;
+    }
+
+    @JsonProperty("usuarioActual")
+    public String getUsuarioActual() {
+        if (alquileres != null && !alquileres.isEmpty() && !disponible) {
+            return alquileres.get(alquileres.size() - 1).getUsuarioNombre();
+        }
+        return null;
     }
 
     @OneToMany(mappedBy = "libro", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -83,7 +96,8 @@ public class Libro {
 
     public Boolean isDisponible() { return disponible; }
 
-    public Aquilar getAlquilerActivo() { return alquilerActivo; }
+    public List<Aquilar> getAlquileres() { return alquileres; }
+    public void setAlquileres(List<Aquilar> alquileres) { this.alquileres = alquileres; }
 
     public List<Critica> getCriticas() { return criticas; }
     public void setCriticas(List<Critica> criticas) { this.criticas = criticas; }
@@ -119,7 +133,7 @@ public class Libro {
                 ", sinopsis='" + sinopsis + '\'' +
                 ", disponible=" + disponible +
                 ", criticas=" + criticas +
-                ", aquilar=" + alquilerActivo +
+                ", alquileres=" + alquileres +
                 '}';
     }
 }

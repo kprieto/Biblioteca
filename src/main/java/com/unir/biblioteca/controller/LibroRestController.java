@@ -144,7 +144,7 @@ public class LibroRestController {
             aquilar.setFechaInicio(req.fechaInicio);
             aquilar.setFechaFin(req.fechaFin);
             aquilarRepository.save(aquilar);
-            libro.setAlquilerActivo(aquilar);
+            //libro.setAlquilerActivo(aquilar);
             libroRepository.save(libro);
             return ResponseEntity.ok("Alquiler registrado exitosamente");
         }).orElse(ResponseEntity.notFound().build());

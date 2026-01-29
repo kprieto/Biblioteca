@@ -75,7 +75,6 @@ const App = () => {
         if (searchTerm.trim() === '') {
             fetchLibros();
         } else {
-            // Si hay término, usamos el motor de Elasticsearch
             const delayDebounceFn = setTimeout(() => {
                 searchElasticsearch(searchTerm);
             }, 500);
@@ -127,11 +126,11 @@ const App = () => {
             };
         }
 
-        // Si está alquilado, comprobamos si la fecha de Fin ha pasado
+
         if (libro.fechaFin) {
-            // Creamos objetos Date para comparar el tiempo real, no el texto
+
             const hoy = new Date();
-            // Ponemos la hora a 00:00:00 para comparar solo el día
+
             hoy.setHours(0, 0, 0, 0);
 
             const fechaLimite = new Date(libro.fechaFin);
@@ -545,6 +544,7 @@ const App = () => {
                                             <div>
                                                 <p className="font-bold">ESTE LIBRO TIENE UN RETRASO</p>
                                                 <p className="text-xs opacity-80">Fecha límite: {selectedLibro.fechaFin}</p>
+                                                <p className="text-xs opacity-80">Usuario: {selectedLibro.}</p>
                                             </div>
                                         </div>                                    )}
                                     <div className="space-y-4">
