@@ -68,8 +68,7 @@ Requisitos Previos
 1. Clonar el repositorio
 
 ```
-  git clone [https://github.com/tu-usuario/biblioteca-digital.git](https://github.com/tu-usuario/biblioteca-digital.git)
-  cd biblioteca-digital
+  git clone [https://github.com/kprieto/Biblioteca.git]
 ```
 
 
@@ -89,7 +88,7 @@ spring.elasticsearch.uris=http://localhost:9200
 ```
 
 
-Ejecuta la clase BookRentalApplication.java.
+Ejecuta la clase BibliotecaApplication.java.
 
 3. Configuración del Frontend (React)
 
