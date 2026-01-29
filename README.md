@@ -1,4 +1,4 @@
-BiblioDigital - Sistema de Gestión de Préstamos de Libros
+###BiblioDigital - Sistema de Gestión de Préstamos de Libros
 
 BiblioDigital es una solución integral para la administración de bibliotecas modernas. Combina la potencia de Spring Boot para el backend, la velocidad de búsqueda de Elasticsearch y una interfaz dinámica desarrollada en React con Tailwind CSS.
 
