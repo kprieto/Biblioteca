@@ -162,6 +162,7 @@
                 <configuration>
                     <workingDirectory>frontend</workingDirectory>
                     <installDirectory>target</installDirectory>
+                    <nodeVersion>v20.19.0</nodeVersion>
                 </configuration>
 
                 <executions>
