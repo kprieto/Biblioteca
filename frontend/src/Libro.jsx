@@ -544,7 +544,7 @@ const App = () => {
                                             <div>
                                                 <p className="font-bold">ESTE LIBRO TIENE UN RETRASO</p>
                                                 <p className="text-xs opacity-80">Fecha límite: {selectedLibro.fechaFin}</p>
-                                                <p className="text-xs opacity-80">Usuario: {selectedLibro.}</p>
+                                                <p className="text-xs opacity-80">Usuario: {selectedLibro.usuario}</p>
                                             </div>
                                         </div>                                    )}
                                     <div className="space-y-4">
