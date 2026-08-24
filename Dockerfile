@@ -1,11 +1,7 @@
 # Etapa 1: construir la aplicación
 FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /build
-
-# Copia TODO el código fuente (incluyendo la carpeta del frontend)
 COPY . .
-
-# Ejecuta el build de Maven
 RUN mvn clean package -DskipTests
 
 # Etapa de ejecución
