@@ -163,7 +163,7 @@
                 <configuration>
                     <workingDirectory>frontend</workingDirectory>
                     <installDirectory>target</installDirectory>
-                    <nodeVersion>v24.19.0</nodeVersion>
+                    <nodeVersion>v22.12.0</nodeVersion>
                 </configuration>
 
                 <executions>
